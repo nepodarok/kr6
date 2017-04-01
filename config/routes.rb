@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root 'home#index'
+  devise_for :users
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+
+
   scope :photo do
     resources :comments, only: [:new, :create]
   end
   resources :users, only: [:index, :show]
-  resources :photos#, only: [:new, :show]
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  resources :photos
+  # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  #, only: [:new, :show]
+  # devise_for :admin_us ers, ActiveAdmin::Devise.config
+  # ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

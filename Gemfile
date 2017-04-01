@@ -7,7 +7,7 @@ gem 'rails', '4.2.4'
 gem 'sqlite3'
 gem 'carrierwave'
 gem 'rmagick'
-
+gem 'faker'
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 # Use SCSS for stylesheets
@@ -17,7 +17,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'activeadmin', github: 'activeadmin'
 gem 'cancancan' # or cancancan
 gem 'devise'

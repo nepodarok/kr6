@@ -4,6 +4,6 @@ class Photo < ActiveRecord::Base
   belongs_to :user
   mount_uploader :pic, AvatarUploader
 
-  validates :pic, presence: true
+  # validates :pic, presence: true
   validates :name, presence: true
 end
