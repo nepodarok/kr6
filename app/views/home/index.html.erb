@@ -2,7 +2,10 @@
 <hr>
 <% @photos.each do |photo| %>
   <h4>photo.name by <%= link_to photo.user.username, "/users/#{photo.user.id}" %></h4>
-  <%= image_tag photo.pic_url(:thumb) %>
+  <!-- <%= image_tag photo.pic_url(:thumb) %> -->
+
+  <%=link_to( image_tag(photo.pic_url(:thumb)), "/photos/#{photo.id}") %>
+
 <% end %>
 <hr>
 <%= will_paginate @photos %>
