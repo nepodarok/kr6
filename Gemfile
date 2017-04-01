@@ -7,6 +7,7 @@ gem 'rails', '4.2.4'
 gem 'sqlite3'
 gem 'carrierwave'
 gem 'rmagick'
+
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 # Use SCSS for stylesheets

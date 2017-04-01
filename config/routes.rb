@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'home#index'
+  scope :photo do
+    resources :comments, only: [:new, :create]
+  end
   resources :users, only: [:index, :show]
   resources :photos#, only: [:new, :show]
   devise_for :admin_users, ActiveAdmin::Devise.config
