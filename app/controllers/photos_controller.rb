@@ -10,10 +10,16 @@ class PhotosController < ApplicationController
       flash[:success] = "Фото загружено"
       # redirect_to @category #redirect_to category_url(@category)
       #redirect_to categories_path
-      redirect_to root_path
+      redirect_to "/users/#{@photo.user_id}"
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id]).destroy
+    flash[:success] = "Фото удалено"
+    redirect_to :back
   end
 
   def show

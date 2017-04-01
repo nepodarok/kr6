@@ -1,2 +1,8 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= will_paginate @photos %>
+<hr>
+<% @photos.each do |photo| %>
+  <h4>photo.name by <%= link_to photo.user.username, "/users/#{photo.user.id}" %></h4>
+  <%= image_tag photo.pic_url(:thumb) %>
+<% end %>
+<hr>
+<%= will_paginate @photos %>

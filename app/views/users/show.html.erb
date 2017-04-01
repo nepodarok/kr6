@@ -1,7 +1,18 @@
-<b><%= @user.username %> - <%= link_to('Edit profile', edit_user_registration_path(current_user))%></b>
-<h2><%= link_to("Create Photo", new_photo_path)%></h2>
+<b><%= @user.username %> - <%= link_to('Edit profile', edit_user_registration_path(current_user), class: 'btn btn-primary')%></b>
+<h2><%= link_to("Create Photo", new_photo_path, class: 'btn btn-primary')%></h2>
+
+<table class="table table-striped">
+
+<th>Image</th>
+<th>Title</th>
+<th>Actions</th>
 
 <% @user.photos.each do |photo| %>
-  <%= image_tag photo.pic_url(:thumb) %>
-  <%= image_tag photo.pic_url(:normal_size) %>
+  <tr>
+    <td><%= image_tag photo.pic_url(:thumb) %></td>
+    <td><%= photo.name %></td>
+    <td><%= link_to "Delete", photo, method: :delete, class: 'btn btn-primary', data: { confirm: "Are you sure?"}%></td>
+  </tr>
 <% end %>
+
+</table>
