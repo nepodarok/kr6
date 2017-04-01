@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  
   def new
     @photo = Photo.new
   end
@@ -17,6 +18,7 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    # authorize! :destroy, @photo
     @photo = Photo.find(params[:id]).destroy
     flash[:success] = "Фото удалено"
     redirect_to :back
