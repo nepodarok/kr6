@@ -1,0 +1,11 @@
+<h1>Все категории</h1>
+
+<p>
+    <%= link_to 'Добавить категорию', new_category_path, class: 'btn btn-primary' %>
+</p>
+
+<table class = "table table-striped">
+  <th>Название</th>
+  <th>Действия</th>
+  <%= render @categories %>
+</table>

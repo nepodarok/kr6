@@ -1,0 +1,8 @@
+
+<tr>
+  <td><%= category.name %></td>
+  <td><%= link_to "Редактировать", edit_category_path(category.id) %>
+   |
+  <%= link_to "Удалить", category, method: :delete,
+                        data: { confirm: "Вы уверены?" } %></td>
+</tr>

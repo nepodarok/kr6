@@ -1,0 +1,13 @@
+<h1><%= @product.name %></h1>
+<h3>Категория: <%= link_to @product.category.name, category_path(@product.category.id) %>, by <%= @product.user.name %></h3>
+<h3>Подробности:</h3>
+<%= @product.content %>
+<br>
+<h3>Контакты</h3>
+<%= @product.contacts %><hr>
+<% if can? :update, @product %>
+<%= link_to "Редактировать", edit_product_path(@product.id), class: "btn btn-primary" %>
+<% end %>
+<% if can? :destroy, @product %>
+  <%= link_to "Удалить", @product, method: :delete, class: "btn btn-primary", data: { confirm: "Вы уверены?" } %>
+<% end %>

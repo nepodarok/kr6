@@ -1,0 +1,3 @@
+<% all_categories.each do |c| %>
+     <div><%= link_to "#{c.name} (#{c.products.count})", category_path(c.id) %></div>
+<% end %>
