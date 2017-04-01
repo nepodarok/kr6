@@ -1,7 +1,6 @@
 <h2><%= @photo.name%></h2>
-
 <%= image_tag @photo.pic_url(:normal_size) %>
-
+<h3>Avarage score: <%= find_avarege_score(@photo.id)%></h3>
 <% if user_signed_in? %>
 <h2>Add Comment</h2>
 <div class="row">

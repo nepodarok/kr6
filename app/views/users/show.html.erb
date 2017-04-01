@@ -1,4 +1,7 @@
-<b><%= @user.username %> - <%= link_to('Edit profile', edit_user_registration_path(current_user), class: 'btn btn-primary')%> - <%= link_to("Create Photo", new_photo_path, class: 'btn btn-primary')%></b>
+<b><%= @user.username %>
+-
+<%= link_to('Edit profile', edit_user_registration_path(current_user), class: 'btn btn-primary')%> - <%= link_to("Create Photo", new_photo_path, class: 'btn btn-primary')%>
+</b>
 
 
 <table class="table table-striped">
@@ -9,9 +12,9 @@
 
 <% @user.photos.each do |photo| %>
   <tr>
-    <td><%= image_tag photo.pic_url(:thumb) %></td>
+    <td><%= link_to( image_tag(photo.pic_url(:thumb)), "/photos/#{photo.id}") %></td>
     <td><%= photo.name %></td>
-    <td><%= link_to "Delete", photo, method: :delete, class: 'btn btn-primary', data: { confirm: "Are you sure?"} if can? :destroy, photo %></td>
+    <td><%= link_to "Delete", photo, method: :delete, class: 'btn btn-primary', data: { confirm: "Are you sure?"} if can? :destroy, photo %> - <%= link_to "Show photo", "/photos/#{photo.id}" %> </td>
   </tr>
 <% end %>
 

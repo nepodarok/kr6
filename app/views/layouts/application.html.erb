@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Homework26</title>
+  <title>KR6</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -24,16 +24,20 @@
         <ul class="nav navbar-nav">
           <ul class="nav navbar-nav">
             <li><%= link_to "All users", users_path %></li>
-            <li><%= link_to "Admin Panel", '/admin'%></li>
+
             <% if user_signed_in? %>
+
               <li>
-              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                <%= link_to("My profile - #{current_user.username}", "/users/#{current_user.id}")%>
               </li>
               <li>
                 <%= link_to('Edit profile', edit_user_registration_path(current_user))%>
               </li>
               <li>
                 <%= link_to('Add Photo', new_photo_path)%>
+              </li>
+              <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
               </li>
 
             <% else %>
@@ -44,6 +48,7 @@
                 <%= link_to('Sign up', new_user_registration_path)  %>
               </li>
             <% end %>
+          
           </ul>
         </ul>
       </div>
