@@ -1,0 +1,7 @@
+<b><%= @user.username %> - <%= link_to('Edit profile', edit_user_registration_path(current_user))%></b>
+<h2><%= link_to("Create Photo", new_photo_path)%></h2>
+
+<% @user.photos.each do |photo| %>
+  <%= image_tag photo.pic_url(:thumb) %>
+  <%= image_tag photo.pic_url(:normal_size) %>
+<% end %>

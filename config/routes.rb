@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root 'home#index'
-
+  resources :users, only: [:index, :show]
+  resources :photos#, only: [:new, :show]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
